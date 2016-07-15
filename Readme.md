@@ -1,5 +1,5 @@
-Curso de Estágio em Programação
+<h3><b>Curso de Estágio em Programação</b></h3>
 
-Repositório de estudos do curso de Estágio em Programação.
+Repositório de estudos do curso. 
 
-https://www.estagioemprogramacao.com/
+https://www.estagioemprogramacao.com
