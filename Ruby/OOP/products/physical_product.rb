@@ -1,0 +1,3 @@
+class PhysicalProduct < Product
+    
+end
