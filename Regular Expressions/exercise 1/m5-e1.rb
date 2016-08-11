@@ -21,7 +21,20 @@ class M5E1
 
     #Retorna quantidade de notícias do tema economia que fala sobre o dólar
     def find_economy_dollar_news
-        
+        array = M5E1::NOTICIAS.scan(/\w.*\s-\s\[economia\](.*)$/).flatten
+        x = 0
+        y = 0
+        result = Array.new
+        while x < array.size
+            str = String.new
+            str = array[x]
+            if str.match(/dólar/)
+               result[y] = array[x]
+               y += 1
+            end
+            x += 1
+        end
+        result.size
     end
     
     #coleta os horários das notícias e retorna uma lista (Array, []) de strings com os horários
