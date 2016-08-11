@@ -10,7 +10,7 @@ class M5E1
                 "19:26 - [esporte] Liga nacional de basquete tem recorde de público"
     
     #Retornar neste formato (política: Prefeito da Krakosia é eleito o melhor para economia (09:55))	            
-    def format_news(string)
+    def format_news
         formated = String.new
         M5E1::NOTICIAS.each_line do |line|
             result = line.match(/(\d{2}:\d{2})\s-\s\[(\w.*)\]\s(\w.*)/)
