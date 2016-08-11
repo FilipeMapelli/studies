@@ -8,17 +8,32 @@ class M5E1
                 "14:55 - [política] Lei de incentivo ao esporte é aprovada no senado às 10:20\n"+
                 "16:13 - [economia] Cotação do dólar sobe 5% em uma semana\n"+
                 "19:26 - [esporte] Liga nacional de basquete tem recorde de público"
-                
+    
+    #Retornar neste formato (política: Prefeito da Krakosia é eleito o melhor para economia (09:55))	            
     def format_news(string)
-        time = M5E1::NOTICIAS.scan(/^(\d{2}:\d{2})\s-\s\[\w.*\]\s.*$/)
-        news = M5E1::NOTICIAS.scan(/^\d{2}:\d{2}\s-\s\[\w.*\]\s(.*)$/)
-        theme = M5E1::NOTICIAS.scan(/^\d{2}:\d{2}\s-\s\[(\w.*)\]\s.*$/)
+        formated = String.new
+        M5E1::NOTICIAS.each_line do |line|
+            result = line.match(/(\d{2}:\d{2})\s-\s\[(\w.*)\]\s(\w.*)/)
+            formated += "#{result[2]}: #{result[3]} (#{result[1]})\n"
+        end
+        formated
+    end
+
+    #Retorna quantidade de notícias do tema economia que fala sobre o dólar
+    def find_economy_dollar_news
+        
+    end
+    
+    #coleta os horários das notícias e retorna uma lista (Array, []) de strings com os horários
+    def find_times
+        array = M5E1::NOTICIAS.scan(/(\d{2}:\d{2})\s-\s.*$/)
         x = 0
-        while x < time.size
-            puts "#{theme[x]}: #{news[x]} (#{time[x]})"
+        result = Array.new
+        while x < array.size
+            result[x] = array[x]
             x += 1
         end
-        #Terminar implementação do método
+        result.flatten
     end
     
 end
