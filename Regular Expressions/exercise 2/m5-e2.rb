@@ -8,5 +8,14 @@ class M5E2
            false
        end
    end
+	
+   #validar se o valor do parâmetro recebido é um email
+   def email_validation(email)
+       if email.match(/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/)
+          return true 
+       else
+          return false 
+       end
+   end
    
 end
