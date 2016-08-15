@@ -14,7 +14,10 @@ class M5E1
         formated = String.new
         M5E1::NOTICIAS.each_line do |line|
             result = line.match(/(\d{2}:\d{2})\s-\s\[(\w.*)\]\s(\w.*)/)
-            formated += "#{result[2]}: #{result[3]} (#{result[1]})\n"
+            formated += "#{result[2]}: #{result[3]} (#{result[1]})"
+	    if formated.lines.count < M5E1::NOTICIAS.lines.count
+               formated += "\n" 
+            end
         end
         formated
     end
