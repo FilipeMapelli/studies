@@ -17,5 +17,12 @@ class Testes
         array = (hash.values).sort
         hash.key(array[array.size-1])
     end
+
+    #Quantas requisições com status ALERTA ou ERRO, originadas de quaisquer IPs, existem no log?
+    def status_request
+       file = File.read("log-do-servidor.log")
+       array = file.scan(/(ERRO|ALERTA)/)
+       array.size
+    end
     
 end
