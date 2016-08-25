@@ -132,9 +132,9 @@ class MySQLExercises2
 
     <<-SQL
         SELECT  DISTINCT categories.id, categories.name
-        FROM categories JOIN products ON categories.id = products.category_id
-        JOIN sales ON sales.seller_id = products.seller_id 
-        AND sales.payment_method = 'Dinheiro'
+        FROM categories RIGHT JOIN products ON categories.id = products.category_id
+        JOIN sales_products ON sales_products.product_id = products.id 
+        JOIN sales ON sales.id = sales_products.sale_id AND sales.payment_method = 'Dinheiro'
         ORDER BY categories.name;
     SQL
   end
