@@ -1,0 +1,41 @@
+Neste exercício, vamos praticar o uso de seletores CSS usando 
+o jogo CSS Diner — Where we feast on CSS Selectors! (http://flukeout.github.io/).
+
+O jogo completo contém 26 níveis, mas, para o nosso exercício, 
+você precisa completar apenas os seguintes níveis:
+
+    1 a 15
+    18
+    25
+    26
+
+Neste arquivo, coloque as suas respostas, no formato de um seletor por linha e, 
+em cada linha, o número do nível seguido de parênteses e da solução, 
+como mostrado no exemplo abaixo.
+
+1) seletor-1
+2) .seletor-2 > .seletor-3
+3) #seletor-4
+... etc
+
+
+####SOLUÇÃO####
+
+1) plate
+2) bento
+3) #fancy
+4) plate apple
+5) #fancy picle
+6) .small
+7) orange.small
+8) bento>orange.small
+9) plate,bento
+10) apple,plate,orange,bento
+11) plate >
+12) plate + apple
+13) bento ~ pickle
+14) plate>apple
+15) orange:first-child
+18) plate:nth-child(3)
+25) bento:empty
+26) apple:not(.small)
