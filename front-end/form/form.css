@@ -65,6 +65,14 @@ h1 {
 
 
 /*
+- classe para mudar font-style para checkbox selecionado.(via java-script)
+*/
+.selected{
+  font-style: italic;
+}
+
+
+/*
  * Campos de texto do formulário
  * --------------------------------------------------------------- */
 

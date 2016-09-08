@@ -35,6 +35,10 @@ var validations = {
   },
   frequency: {
     blank: validatePresence
+  },
+  phone: {
+    blank: validatePresence,
+    valid: validatePhone
   }
 };
 
@@ -122,7 +126,8 @@ function validatePhone(inputName, input) {
   // estiver vazio, ele deve ser considerado válido, pois a outra mensagem
   // de erro (sobre ausência/presença) já será exibida.
 
-  return true;
+  var isValid = isEmpty(input.value) || /^\d{10}$|^\d{11}$/.test(input.value);
+  return showOrHideErrorMessage(inputName, isValid, 'invalid');
 }
 
 /**
@@ -231,6 +236,22 @@ function cleanUp(event) {
 
 
 /**
+ * Adiciona classe CSS ao checkbox selecionado
+ */
+function changed(){
+  var checkbox = document.querySelectorAll('[type=checkbox]');
+  for(var i=0; i<checkbox.length; i++){
+    var label = checkbox[i].parentElement;
+    if (checkbox[i].checked == true){
+      label.classList.add("selected");
+    }else{
+      label.classList.remove("selected");
+    }
+  }
+}
+
+
+/**
  * Configuração de "event listeners" para os elementos do HTML cujos eventos
  * queremos interceptar.
  */
@@ -240,5 +261,15 @@ document.querySelector("form#sign-up").addEventListener("submit", validateForm);
 
 // Interceptação do evento de click no botão "Limpar".
 document.querySelector("input[type=reset]").addEventListener("click", cleanUp);
+
+
+// adicionar ação ao clique no checkbox
+var checkboxes = document.querySelectorAll("input[type=checkbox]");
+for (var i = 0; i < checkboxes.length; i++){
+  checkboxes[i].addEventListener("change",changed);
+}
+
+
+
 
 
