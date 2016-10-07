@@ -1,0 +1,10 @@
+<div id="articles">
+    <h1>Conheça nossos artigos</h1>
+    
+    <% @articles.each do |article| %>
+
+    <%= article[:title]%>, <%= article[:author]%> - <%=article[:category]%><br>
+
+    <%end%>
+    
+</div>
