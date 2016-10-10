@@ -3,7 +3,9 @@
     
     <% @articles.each do |article| %>
 
-    <%= article.title%>, <%= article.author%> - <%=article.category%><br>
+    <span class="label label-warning"><%= article.category%></span>
+    <span class="label label-succes">
+        <%= link_to article.title, controller: :blog, action: :article, id: article.id %></span><br>
 
     <%end%>
     
