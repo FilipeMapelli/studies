@@ -1,10 +1,5 @@
 class BlogController < ApplicationController
   def index
-    @articles= [
-      {title: 'título', author: 'autor', category: 'categoria'},
-      {title: 'título', author: 'autor', category: 'categoria'},
-      {title: 'título', author: 'autor', category: 'categoria'},
-      {title: 'título', author: 'autor', category: 'categoria'}
-      ].shuffle
+    @articles= Article.all.shuffle
   end
 end
