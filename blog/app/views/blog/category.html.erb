@@ -1,0 +1,12 @@
+<div class="container">
+    
+  <h1><span class="label label-warning"><%= params[:c] %></span></h1><br>
+  
+  <% @articles.each do |article| %>
+    
+    <span class="label label-succes">
+        <%= link_to article.title, controller: :blog, action: :article, id: article.id %></span><br>
+        
+  <%end%>
+    
+</div>

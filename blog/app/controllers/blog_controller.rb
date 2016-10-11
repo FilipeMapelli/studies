@@ -6,4 +6,8 @@ class BlogController < ApplicationController
   def article
   	@article = Article.find(params[:id])
   end
+  
+  def category
+  	@articles = Article.where(category: params[:c]).all
+  end
 end

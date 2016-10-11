@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :articles
   
   get 'artigo/:id', to: 'blog#article'
+  get 'categoria', to: 'blog#category'
   
   root 	'blog#index'
 
