@@ -3,7 +3,7 @@
     
     <% @articles.each do |article| %>
 
-    <span class="label label-warning"><%= article.category%></span>
+    <a href="categoria?c=<%=article.category%>"><span class="label label-warning"><%= article.category%></span></a>
     <span class="label label-succes">
         <%= link_to article.title, controller: :blog, action: :article, id: article.id %></span><br>
 
